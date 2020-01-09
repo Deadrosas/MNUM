@@ -1,13 +1,13 @@
 from math import cos
 def func(x):
-    return cos(x)
+    return pow(x-4,2)+pow(x,4)
 
 
 def uni_search(a,b):
-    h=(a+b)/8
+    h=(a+b)/20
     c=a
     d=a
-    for i in range(0,5000):
+    for i in range(0,30):
         if(func(a)>func(c)):
             a=d
             d=c
