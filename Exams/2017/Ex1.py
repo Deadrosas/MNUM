@@ -27,10 +27,10 @@ def golden_method(a,b,tolerance=1e-2):
     return [a,b]
 
 def uni_search(a,b):
-    h=(a+b)/10
+    h=(a+b)/20
     c=a
     d=a
-    for i in range(0,100):
+    for i in range(0,30):
         if(f(a)>f(c)):
             a=d
             d=c
@@ -44,9 +44,9 @@ def uni_search(a,b):
                 a=b
     return [a,(a+b)/2,b]
 
-def quadratic_interpolation(c,a,b):
-    h=b-a
-    return a+(h*(f(c)-f(b)))/(2*f(b)-2*f(a)+f(c))
+def quadratic_interpolation(a,c,b):
+    h=(b-a)/2
+    return a-(h*(f(a)-f(b)))/(2*(f(a)-2*f(c)+f(b)))
 
 def find_min_thirds(a,b):
     l1=thirds(0,2)
@@ -60,3 +60,5 @@ def find_min_golden(a,b):
 
 
 print(find_min_thirds(1,1.2))
+
+print(find_min_golden(1,1.2))
