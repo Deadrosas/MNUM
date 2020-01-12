@@ -15,6 +15,20 @@ def trapezium(a,b,h):
         sum+=2*df(a+i*h)
     return sum*h/2
 
+def simpson(a,b,h):
+    n=round(abs(b-a)/h)
+    sum=df(a)+df(b)
+    for i in range(1,n):
+        if(i%2==0):
+            sum+=2*df(a+i*h)
+        else:
+            sum+=4*df(a+i*h)
+    return sum*h/3
+print("Trapezium:")
 print(trapezium(0,1,h1))
 print(trapezium(0,1,h2))
 print(trapezium(0,1,h3))
+print("Simpson:")
+print(simpson(0,1,h1))
+print(simpson(0,1,h2))
+print(simpson(0,1,h3))
